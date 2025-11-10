@@ -1,0 +1,13 @@
+[package]
+name = "f64-fixed"
+version = "0.1.0"
+edition = "2024"
+authors = ["Oleksandr Polieno <oleksandr@nanvel.com>"]
+license = "MIT"
+description = "Convert f64 to fixed-length string"
+repository = "https://github.com/nanvel/f64-fixed"
+keywords = ["f64", "formatting"]
+categories = ["value-formatting"]
+readme = "README.md"
+
+[dependencies]
