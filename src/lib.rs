@@ -1,10 +1,11 @@
 pub trait ToFixedString {
-    fn to_fixed_string(&self, places: usize) -> String;
+    fn to_fixed_string(&self, places: isize) -> String;
 }
 
 impl ToFixedString for f64 {
-    fn to_fixed_string(&self, places: usize) -> String {
-        let places = places.max(6);
+    fn to_fixed_string(&self, places: isize) -> String {
+        let align_left = places > 0;
+        let places = places.abs().max(6) as usize;
         let sign = if self.is_sign_negative() { "-" } else { "" };
         let value = self.abs();
 
@@ -29,10 +30,14 @@ impl ToFixedString for f64 {
             }
         }
 
-        format!("{}{}{}{}", sign, mantissa, exp, " ".repeat(mantissa_places.saturating_sub(mantissa.len())))
+        if align_left {
+            format!("{}{}{}{}", sign, mantissa, exp, " ".repeat(mantissa_places.saturating_sub(mantissa.len())))
+        } else {
+            format!("{}{}{}{}", " ".repeat(mantissa_places.saturating_sub(mantissa.len())), sign, mantissa, exp)
+        }
     }
 }
 
-pub fn to_fixed_string(value: f64, places: usize) -> String {
+pub fn to_fixed_string(value: f64, places: isize) -> String {
     value.to_fixed_string(places)
 }

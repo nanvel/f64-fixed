@@ -13,3 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `ToFixedString` trait
 - `to_fixed_string` function
+
+## [0.2.0] - 2025-11-13
+
+### Changed
+
+- Use `places` argument to control alignment. Negative places -> align right.
