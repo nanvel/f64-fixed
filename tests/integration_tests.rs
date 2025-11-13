@@ -32,3 +32,8 @@ fn test_6_places() {
     assert_eq!(to_fixed_string(12345678., 6), "12.3+6");
     assert_eq!(to_fixed_string(123456789., 6), "123+6 ");
 }
+
+#[test]
+fn test_alignment() {
+    assert_eq!(to_fixed_string(123456789., -6), " 123+6");
+}
