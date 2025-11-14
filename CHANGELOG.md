@@ -19,3 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Use `places` argument to control alignment. Negative places -> align right.
+
+## [0.2.1] - 2025-11-14
+
+### Fixed
+
+- Increase decimals limit to 6 `0.001678`: `0.0016  ` -> `0.001678`

@@ -6,6 +6,7 @@ fn test_places() {
     assert_eq!(to_fixed_string(1234567.0, 6), "1.23+6");
     assert_eq!(to_fixed_string(1000.0, 7), "1000   ");
     assert_eq!(to_fixed_string(1000.0, 8), "1000    ");
+    assert_eq!(to_fixed_string(0.001678, 8), "0.001678");
 }
 
 #[test]

@@ -14,9 +14,9 @@ impl ToFixedString for f64 {
         } else {
             let exp = self.abs().log10().floor() as i32 / 3 * 3;
             if exp > 3 || exp < -3 || value < 0.001 {
-                (format!("{:.4}", value / 10f64.powi(exp)), format!("{:+}", exp))
+                (format!("{:.6}", value / 10f64.powi(exp)), format!("{:+}", exp))
             } else {
-                (format!("{:.4}", value), "".to_string())
+                (format!("{:.6}", value), "".to_string())
             }
         };
 
